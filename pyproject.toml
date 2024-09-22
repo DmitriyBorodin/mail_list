@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "mail-list"
+version = "0.1.0"
+description = "service for sending mails"
+authors = ["Borodin Dmitriy"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
