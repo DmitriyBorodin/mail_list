@@ -27,10 +27,20 @@ DAILY = "DAILY"
 WEEKLY = "WEEKLY"
 MONTHLY = "MONTHLY"
 
-CHOICES = (
+CHOICES_PERIODICITY = (
     (DAILY, "Ежедневно"),
     (WEEKLY, "Еженедельно"),
     (MONTHLY, "Ежемесячно"),
+)
+
+CREATED = "CREATED"
+STARTED = "STARTED"
+COMPLETED = "COMPLETED"
+
+CHOICES_STATUS =(
+    (CREATED, "Создана"),
+    (STARTED, "Запущена"),
+    (COMPLETED, "Завершена"),
 )
 
 
@@ -39,13 +49,13 @@ class MailListSetting(models.Model):
         verbose_name="Дата и время первой рассылки")
 
     periodicity = models.CharField(
-        max_length=7,
-        choices=CHOICES,
+        max_length=20,
+        choices=CHOICES_PERIODICITY,
         verbose_name="периодичность")
 
     status = models.CharField(
-        max_length=7,
-        choices=CHOICES,
+        max_length=20,
+        choices=CHOICES_STATUS,
         verbose_name="Статус рассылки")
 
     message_to_send = models.OneToOneField(
