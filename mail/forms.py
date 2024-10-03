@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import BooleanField, ModelForm
 
-from mail.models import MailListSetting
+from mail.models import MailListSetting, Client
 
 
 class StyleMixin:
@@ -23,3 +23,9 @@ class MailListSettingForm(StyleMixin, ModelForm):
         widgets = {
             'first_send': forms.TextInput(attrs={'type': 'datetime-local'}),
         }
+
+
+class ClientForm(StyleMixin, ModelForm):
+    class Meta:
+        model = Client
+        fields = ('name', 'email', 'comment')

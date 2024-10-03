@@ -13,6 +13,13 @@ class Client(models.Model):
     comment = models.CharField(
         max_length=100, verbose_name="Комментарий")
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Клиент"
+        verbose_name_plural = "Клиенты"
+
 
 class Message(models.Model):
     subject = models.CharField(
@@ -21,6 +28,13 @@ class Message(models.Model):
 
     message_body = models.TextField(
         verbose_name="Тело письма")
+
+    def __str__(self):
+        return self.subject
+
+    class Meta:
+        verbose_name = "Сообщение"
+        verbose_name_plural = "Сообщения"
 
 
 DAILY = "DAILY"
@@ -72,6 +86,13 @@ class MailListSetting(models.Model):
         on_delete=models.SET_NULL,
         **NULLABLE)
 
+    def __str__(self):
+        return f"Время первой рассылки{self.first_send}"
+
+    class Meta:
+        verbose_name = "Рассылка"
+        verbose_name_plural = "Рассылки"
+
 
 class MailingAttempt(models.Model):
     last_attempt = models.DateTimeField(
@@ -83,12 +104,15 @@ class MailingAttempt(models.Model):
     server_response = models.TextField(
         verbose_name="Ответ сервера", **NULLABLE)
 
-    parent_mail = models.OneToOneField(
+    parent_mail = models.ForeignKey(
         MailListSetting,
         verbose_name="Рассылка",
         on_delete=models.SET_NULL,
         **NULLABLE)
 
+    def __str__(self):
+        return self.last_attempt
 
-
-
+    class Meta:
+        verbose_name = "Попытка рассылки"
+        verbose_name_plural = "Попытки рассылки"
