@@ -4,7 +4,8 @@ from mail.apps import MailConfig
 from mail.views import (MailListView, MailDetailView,
                         MailCreateView, MailUpdateView, MailDeleteView,
                         ClientListView, ClientDetailView, IndexView,
-                        ClientCreateView, ClientUpdateView, ClientDeleteView)
+                        ClientCreateView, ClientUpdateView, ClientDeleteView,
+                        MessageCreateView)
 
 app_name = MailConfig.name
 
@@ -23,4 +24,6 @@ urlpatterns = [
     path("client/create/", ClientCreateView.as_view(), name="client_create"),
     path("client/<int:pk>/update/", ClientUpdateView.as_view(), name="client_update"),
     path("client/<int:pk>/delete/", ClientDeleteView.as_view(), name="client_delete"),
+
+    path("message/create/", MessageCreateView.as_view(), name="message_create"),
 ]

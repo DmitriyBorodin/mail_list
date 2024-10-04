@@ -3,8 +3,8 @@ from django.urls import reverse_lazy
 from django.views.generic import (ListView, DeleteView, CreateView,
                                   UpdateView, DetailView, TemplateView)
 
-from mail.forms import MailListSettingForm, ClientForm
-from mail.models import MailListSetting, Client
+from mail.forms import MailListSettingForm, ClientForm, MessageForm
+from mail.models import MailListSetting, Client, Message
 
 
 class IndexView(TemplateView):
@@ -59,3 +59,9 @@ class ClientUpdateView(UpdateView):
 class ClientDeleteView(DeleteView):
     model = Client
     success_url = reverse_lazy('mail:client_list')
+
+
+class MessageCreateView(CreateView):
+    model = Message
+    form_class = MessageForm
+    success_url = reverse_lazy("mail:client_list")

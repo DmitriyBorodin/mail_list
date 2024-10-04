@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import BooleanField, ModelForm
 
-from mail.models import MailListSetting, Client
+from mail.models import MailListSetting, Client, Message
 
 
 class StyleMixin:
@@ -29,3 +29,9 @@ class ClientForm(StyleMixin, ModelForm):
     class Meta:
         model = Client
         fields = ('name', 'email', 'comment')
+
+
+class MessageForm(StyleMixin, ModelForm):
+    class Meta:
+        model = Message
+        fields = ('subject', 'message_body')
