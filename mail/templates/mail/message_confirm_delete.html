@@ -8,14 +8,14 @@
                 <div class="col-8">
                     <div class="card">
                         <div class="card-body">
-                            <p class="card-text"> Хотите удалить рассылку? </p>
+                            <p class="card-text"> Хотите удалить письмо? </p>
                             <form method="post">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-warning">
                                     Да, удалить
                                 </button>
                                 <a class="btn btn-success"
-                                   href="{% url 'mail:mail_list' %}" role="button">
+                                   href="{% url 'mail:message_list' %}" role="button">
                                     Нет, не удалять</a>
                             </form>
                         </div>

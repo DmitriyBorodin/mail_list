@@ -1,0 +1,47 @@
+{% extends 'mail/index.html' %}
+
+{% block content %}
+
+<div class="album py-5 bg-body-tertiary" xmlns="http://www.w3.org/1999/html">
+    <div class="container">
+        <a class="btn btn-primary"
+           href="{% url 'mail:message_create' %}"
+           role="button">
+            Создать письмо
+        </a>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for object in object_list %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <p class="card-text"><strong>
+                            {{object.subject}} </strong></p>
+                        <p class="card-text"> {{object.message_body}} </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a class="btn btn-primary"
+                                   href="{% url 'mail:message_detail' object.pk %}"
+                                   role="button">
+                                    Детали
+                                </a>
+                                <a class="btn btn-primary"
+                                   href="{% url 'mail:message_update' object.pk %}"
+                                   role="button">
+                                    Редактировать
+                                </a>
+                                <a class="btn btn-warning"
+                                   href="{% url 'mail:message_delete' object.pk %}"
+                                   role="button">
+                                    Удалить
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'mail/index.html' %}
+
+{% block content %}
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
+    <h2 class="display-4">Блог</h2>
+    <h5>Интересные идеи и полезные советы по интернет-маркетингу</h5>
+</div>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for object in object_list %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <h5 class="card-title mt-3 mb-3"><strong>{{ object.title }}</strong></h5>
+
+                    <div class="card-body">
+                        <img src="{{ object.image }}" class="card-img-top"
+                             style="height: 200px; width: 100%; object-fit: contain;">
+                        <p class="card-text">
+                            {{ object.content|slice:":100" }}{% if object.content|length > 100 %}...{% endif %}
+                        </p>
+                        <p class="card-text">Просмотры: {{ object.view_counter }}</p>
+
+                        <div class="d-flex flex-column">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

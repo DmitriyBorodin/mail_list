@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mail', '0004_alter_client_options_alter_mailingattempt_options_and_more'),
+        ("mail", "0004_alter_client_options_alter_mailingattempt_options_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='message',
-            options={'verbose_name': 'Сообщение', 'verbose_name_plural': 'Сообщения'},
+            name="message",
+            options={"verbose_name": "Сообщение", "verbose_name_plural": "Сообщения"},
         ),
     ]

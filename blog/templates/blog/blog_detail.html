@@ -1,0 +1,21 @@
+{% extends 'mail/index.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="col-9">
+        <div class="card shadow-sm">
+            <h5 class="card-title"><strong>"{{ object.title }}")</strong></h5>
+            <img src="{{ object.image }}">
+
+            <div class="card-body">
+                <p class="card-text">{{ object.content }}</p>
+                <p class="card-text">Дата: {{ object.created_at }}</p>
+                <p class="card-text">Просмотры: {{ object.view_count }}</p>
+                <a type="button" class="btn btn-outline-dark" href="{% url 'blog:blog_list' %}"
+                   role="button">Назад</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

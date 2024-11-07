@@ -6,20 +6,23 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mail', '0003_alter_mailingattempt_parent_mail'),
+        ("mail", "0003_alter_mailingattempt_parent_mail"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='client',
-            options={'verbose_name': 'Клиент', 'verbose_name_plural': 'Клиенты'},
+            name="client",
+            options={"verbose_name": "Клиент", "verbose_name_plural": "Клиенты"},
         ),
         migrations.AlterModelOptions(
-            name='mailingattempt',
-            options={'verbose_name': 'Попытка рассылки', 'verbose_name_plural': 'Попытки рассылки'},
+            name="mailingattempt",
+            options={
+                "verbose_name": "Попытка рассылки",
+                "verbose_name_plural": "Попытки рассылки",
+            },
         ),
         migrations.AlterModelOptions(
-            name='maillistsetting',
-            options={'verbose_name': 'Рассылка', 'verbose_name_plural': 'Рассылки'},
+            name="maillistsetting",
+            options={"verbose_name": "Рассылка", "verbose_name_plural": "Рассылки"},
         ),
     ]

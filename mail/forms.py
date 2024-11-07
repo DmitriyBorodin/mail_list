@@ -9,29 +9,28 @@ class StyleMixin:
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             if isinstance(field, BooleanField):
-                field.widget.attrs['class'] = "form-check-input"
+                field.widget.attrs["class"] = "form-check-input"
             else:
-                field.widget.attrs['class'] = "form-control"
+                field.widget.attrs["class"] = "form-control"
 
 
 class MailListSettingForm(StyleMixin, ModelForm):
     class Meta:
         model = MailListSetting
-        fields = ('first_send', 'periodicity',
-                  'message_to_send', 'receivers')
+        fields = ("first_send", "periodicity", "message_to_send", "receivers", "status")
 
         widgets = {
-            'first_send': forms.TextInput(attrs={'type': 'datetime-local'}),
+            "first_send": forms.TextInput(attrs={"type": "datetime-local"}),
         }
 
 
 class ClientForm(StyleMixin, ModelForm):
     class Meta:
         model = Client
-        fields = ('name', 'email', 'comment')
+        fields = ("name", "email", "comment")
 
 
 class MessageForm(StyleMixin, ModelForm):
     class Meta:
         model = Message
-        fields = ('subject', 'message_body')
+        fields = ("subject", "message_body")

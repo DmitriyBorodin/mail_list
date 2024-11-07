@@ -7,13 +7,19 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mail', '0002_alter_maillistsetting_periodicity_and_more'),
+        ("mail", "0002_alter_maillistsetting_periodicity_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='mailingattempt',
-            name='parent_mail',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='mail.maillistsetting', verbose_name='Рассылка'),
+            model_name="mailingattempt",
+            name="parent_mail",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="mail.maillistsetting",
+                verbose_name="Рассылка",
+            ),
         ),
     ]

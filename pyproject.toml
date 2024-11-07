@@ -12,6 +12,9 @@ psycopg2 = "^2.9.9"
 pillow = "^10.4.0"
 redis = "^5.0.8"
 python-dotenv = "^1.0.1"
+apscheduler = "^3.10.4"
+pytz = "^2024.2"
+black = "^24.10.0"
 
 
 [build-system]

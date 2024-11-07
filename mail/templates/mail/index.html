@@ -1,219 +1,320 @@
 {% load static %}
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="{% static 'js/color-modes.js' %}"></script>
+<head>
+    <script src="{% static 'js/color-modes.js' %}"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="author"
+          content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.122.0">
     <title>Рассыл.очка</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <link rel="canonical"
+          href="https://getbootstrap.com/docs/5.3/examples/album/">
 
 
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
         }
-      }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+        .b-example-divider {
+          width: 100%;
+          height: 3rem;
+          background-color: rgba(0, 0, 0, .1);
+          border: solid rgba(0, 0, 0, .15);
+          border-width: 1px 0;
+          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+        .b-example-vr {
+          flex-shrink: 0;
+          width: 1.5rem;
+          height: 100vh;
+        }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+        .bi {
+          vertical-align: -.125em;
+          fill: currentColor;
+        }
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
+        .btn-bd-primary {
+          --bd-violet-bg: #712cf9;
+          --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
+          --bs-btn-font-weight: 600;
+          --bs-btn-color: var(--bs-white);
+          --bs-btn-bg: var(--bd-violet-bg);
+          --bs-btn-border-color: var(--bd-violet-bg);
+          --bs-btn-hover-color: var(--bs-white);
+          --bs-btn-hover-bg: #6528e0;
+          --bs-btn-hover-border-color: #6528e0;
+          --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+          --bs-btn-active-color: var(--bs-btn-hover-color);
+          --bs-btn-active-bg: #5a23c8;
+          --bs-btn-active-border-color: #5a23c8;
+        }
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
+        .bd-mode-toggle {
+          z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+          display: block !important;
+        }
     </style>
 
 
-  </head>
-  <body>
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
         <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
         <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
+    </symbol>
+</svg>
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+            id="bd-theme"
+            type="button"
+            aria-expanded="false"
+            data-bs-toggle="dropdown"
+            aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+            <use href="#circle-half"></use>
+        </svg>
         <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text">
         <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
+            <button type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light" aria-pressed="false">
+                <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                    <use href="#sun-fill"></use>
+                </svg>
+                Light
+                <svg class="bi ms-auto d-none" width="1em" height="1em">
+                    <use href="#check2"></use>
+                </svg>
+            </button>
         </li>
         <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
+            <button type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark" aria-pressed="false">
+                <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                    <use href="#moon-stars-fill"></use>
+                </svg>
+                Dark
+                <svg class="bi ms-auto d-none" width="1em" height="1em">
+                    <use href="#check2"></use>
+                </svg>
+            </button>
         </li>
         <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
+            <button type="button"
+                    class="dropdown-item d-flex align-items-center active"
+                    data-bs-theme-value="auto" aria-pressed="true">
+                <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                    <use href="#circle-half"></use>
+                </svg>
+                Auto
+                <svg class="bi ms-auto d-none" width="1em" height="1em">
+                    <use href="#check2"></use>
+                </svg>
+            </button>
         </li>
-      </ul>
-    </div>
+    </ul>
+</div>
 
 
 <header data-bs-theme="dark">
-  <div class="collapse text-bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4>About</h4>
-          <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
+    <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <!--                    <h4>About</h4>-->
+                    {% if user.is_authenticated %}
+                    <p class="text-body-secondary">Вы вошли как
+                        {{user.email}}</p>
+                    {% endif %}
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4>Меню</h4>
+                    <ul class="list-unstyled">
+                        {% if user.is_authenticated %}
+                        <li><a href="/users/profile/" class="text-white">Профиль</a>
+                        </li>
+                        <li><a href="/users/password-reset/"
+                               class="text-white">Сменить пароль</a>
+                        </li>
+                        <li>
+                            <form action="{% url 'users:logout' %}"
+                                  method="post">
+                                {% csrf_token %}
+                                <input type="submit" value="Выйти"
+                                       class="text-white">
+                            </form>
+                        </li>
+                        {% else %}
+                        <li><a href="/users/register/" class="text-white">Зарегистрироваться</a>
+                        </li>
+                        <li><a href="/users/login/"
+                               class="text-white">Войти</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4>Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="/message/create" class="text-white">Создать письмо</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-          </ul>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="/" class="navbar-brand d-flex align-items-center">
+                <svg width="40" height="40" viewBox="-2.4 -2.4 28.80 28.80"
+                     fill="none" xmlns="http://www.w3.org/2000/svg"
+                     transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0">
+                        <path transform="translate(-2.4, -2.4), scale(0.8999999999999999)"
+                              d="M16,25.731301551063858C17.52930880522898,25.06542027419259,19.062295068999752,24.62731790532258,20.574039198458195,23.922468287541218C22.229569626504922,23.150578411010212,24.142275359363882,22.775893724671576,25.324746759778705,21.383645051883327C26.58382850117938,19.901194920081362,26.707649654163827,17.85168978944892,27.30278841820028,16C28.1494274385113,13.365802861460168,31.352183451778178,10.282882900222246,29.573861600275308,8.16312735113833C27.6194174353514,5.833434410307115,23.63827103088769,8.269295580597547,20.607617737518417,8.019371976762546C19.015885747715252,7.888109388560381,17.48698514539044,7.626606775642509,16,7.043755360775524C13.416224552841683,6.0309966390470855,11.350088421040464,2.53682588742314,8.696963757276539,3.350770178086041C6.309298662505258,4.083274910504865,7.061496156942265,7.956485439454976,5.870075113874854,10.15148514012495C4.720264912638561,12.269823625269657,1.8949526862911137,13.590571671451784,1.8311046941412812,15.999999999999998C1.7674369671945962,18.402625670038702,4.493307283191973,19.87413485770775,5.555296951907584,22.03025211642185C6.714584477050577,24.38390951479915,5.881016148934293,28.366924934269775,8.354019686579697,29.243226376515356C11.043430203055607,30.19621098753705,13.383961726737866,26.870359208868347,16,25.731301551063858"
+                              fill="#3ac4f2" strokewidth="0"></path>
+                    </g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                       stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M10 9.66679L11.3846 11.0001L14.5 8.00012M3.02832 10.0001L10.2246 14.8167C10.8661 15.2444 11.1869 15.4582 11.5336 15.5413C11.8399 15.6147 12.1593 15.6147 12.4657 15.5413C12.8124 15.4582 13.1332 15.2444 13.7747 14.8167L20.971 10.0001M10.2981 4.06892L4.49814 7.71139C3.95121 8.05487 3.67775 8.2266 3.4794 8.45876C3.30385 8.66424 3.17176 8.90317 3.09111 9.16112C3 9.45256 3 9.77548 3 10.4213V16.8001C3 17.9202 3 18.4803 3.21799 18.9081C3.40973 19.2844 3.71569 19.5904 4.09202 19.7821C4.51984 20.0001 5.0799 20.0001 6.2 20.0001H17.8C18.9201 20.0001 19.4802 20.0001 19.908 19.7821C20.2843 19.5904 20.5903 19.2844 20.782 18.9081C21 18.4803 21 17.9202 21 16.8001V10.4213C21 9.77548 21 9.45256 20.9089 9.16112C20.8282 8.90317 20.6962 8.66424 20.5206 8.45876C20.3223 8.2266 20.0488 8.05487 19.5019 7.71139L13.7019 4.06891C13.0846 3.68129 12.776 3.48747 12.4449 3.41192C12.152 3.34512 11.848 3.34512 11.5551 3.41192C11.224 3.48747 10.9154 3.68129 10.2981 4.06892Z"
+                              stroke="#000000" stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+                <strong>Рассыл.очка</strong>
+            </a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
-      <a href="/client/" class="navbar-brand d-flex align-items-center">
-      <svg width="40" height="40" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"><path transform="translate(-2.4, -2.4), scale(0.8999999999999999)" d="M16,25.731301551063858C17.52930880522898,25.06542027419259,19.062295068999752,24.62731790532258,20.574039198458195,23.922468287541218C22.229569626504922,23.150578411010212,24.142275359363882,22.775893724671576,25.324746759778705,21.383645051883327C26.58382850117938,19.901194920081362,26.707649654163827,17.85168978944892,27.30278841820028,16C28.1494274385113,13.365802861460168,31.352183451778178,10.282882900222246,29.573861600275308,8.16312735113833C27.6194174353514,5.833434410307115,23.63827103088769,8.269295580597547,20.607617737518417,8.019371976762546C19.015885747715252,7.888109388560381,17.48698514539044,7.626606775642509,16,7.043755360775524C13.416224552841683,6.0309966390470855,11.350088421040464,2.53682588742314,8.696963757276539,3.350770178086041C6.309298662505258,4.083274910504865,7.061496156942265,7.956485439454976,5.870075113874854,10.15148514012495C4.720264912638561,12.269823625269657,1.8949526862911137,13.590571671451784,1.8311046941412812,15.999999999999998C1.7674369671945962,18.402625670038702,4.493307283191973,19.87413485770775,5.555296951907584,22.03025211642185C6.714584477050577,24.38390951479915,5.881016148934293,28.366924934269775,8.354019686579697,29.243226376515356C11.043430203055607,30.19621098753705,13.383961726737866,26.870359208868347,16,25.731301551063858" fill="#3ac4f2" strokewidth="0"></path></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 9.66679L11.3846 11.0001L14.5 8.00012M3.02832 10.0001L10.2246 14.8167C10.8661 15.2444 11.1869 15.4582 11.5336 15.5413C11.8399 15.6147 12.1593 15.6147 12.4657 15.5413C12.8124 15.4582 13.1332 15.2444 13.7747 14.8167L20.971 10.0001M10.2981 4.06892L4.49814 7.71139C3.95121 8.05487 3.67775 8.2266 3.4794 8.45876C3.30385 8.66424 3.17176 8.90317 3.09111 9.16112C3 9.45256 3 9.77548 3 10.4213V16.8001C3 17.9202 3 18.4803 3.21799 18.9081C3.40973 19.2844 3.71569 19.5904 4.09202 19.7821C4.51984 20.0001 5.0799 20.0001 6.2 20.0001H17.8C18.9201 20.0001 19.4802 20.0001 19.908 19.7821C20.2843 19.5904 20.5903 19.2844 20.782 18.9081C21 18.4803 21 17.9202 21 16.8001V10.4213C21 9.77548 21 9.45256 20.9089 9.16112C20.8282 8.90317 20.6962 8.66424 20.5206 8.45876C20.3223 8.2266 20.0488 8.05487 19.5019 7.71139L13.7019 4.06891C13.0846 3.68129 12.776 3.48747 12.4449 3.41192C12.152 3.34512 11.848 3.34512 11.5551 3.41192C11.224 3.48747 10.9154 3.68129 10.2981 4.06892Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        <strong>Рассыл.очка</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
 </header>
 
 <main>
 
-  <section class="py-5 text-center container">
-      <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light">Сервис рассылок</h1>
-        <p class="lead text-body-secondary">Наш сервис для ваших рассылок!</p>
-        <p>
-          <a href="/client/" class="btn btn-primary my-2">Клиенты</a>
-          <a href="/mail/" class="btn btn-secondary my-2">Рассылки</a>
+    <section class="py-5 text-center container">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Сервис рассылок</h1>
+            <p class="lead text-body-secondary">Наш сервис для ваших
+                рассылок!</p>
+            <p>
+            <p class="lead text-body-secondary">Рассылок всего - {{mailings_total}}</p>
+            <p class="lead text-body-secondary">Активных рассылок - {{active_mailings_total}}</p>
+            <p class="lead text-body-secondary">Клиентов для рассылок - {{clients_total}}</p>
+            <p>
+                {% if user.is_authenticated %}
+                <a href="/client/" class="btn btn-primary my-2">Клиенты</a>
+                <a href="/mail/" class="btn btn-success my-2">Рассылки</a>
+                <a href="/message/" class="btn btn-info my-2">Письма</a>
+                <a href="/report/" class="btn btn-light my-2">Отчёты</a>
+                {% else %}
+                <a href="/users/register/" class="btn btn-primary my-2">Зарегистрироваться</a>
+                <a href="/users/login/" class="btn btn-success my-2">Войти</a>
+                {% endif %}
+            </p>
+        </div>
+    </section>
 
-        </p>
-    </div>
-  </section>
-
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 </main>
 
+<div class="col-12 mt-5">
+    <h3 class="text-center">Интересные идеи и полезные советы по интернет-маркетингу</h3>
+    <div class="row">
+        {% if random_blogs %}
+        {% for blog in random_blogs %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ blog.title }}</h5>
+                    <img src="{{ blog.image }}" class="card-img-top"
+                         style="height: 200px; width: 100%; object-fit: contain;">
+                    <p class="card-text">
+                        {{ blog.content|slice:":100" }}{% if blog.content|length > 100 %}...{% endif %}
+                    </p>
+                    <p class="card-text">Просмотры: {{ blog.view_count }}</p>
+                    <div class="d-flex flex-column">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="text-center">Скоро здесь появятся новые статьи.</p>
+        {% endif %}
+    </div>
+</div>
+
 <footer class="text-body-secondary py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">&copy; Никакие права не защищены</p>
-  </div>
+    <div class="container">
+        <p class="float-end mb-1">
+            <a href="#">Back to top</a>
+        </p>
+        <p class="mb-1">&copy; Никакие права не защищены</p>
+    </div>
 </footer>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
-    </body>
+</body>
 </html>
